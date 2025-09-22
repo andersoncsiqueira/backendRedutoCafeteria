@@ -1,17 +1,28 @@
 {
   "development": {
-    "username": "root", 
-    "password": "123456", 
+    "username": "cafeteria",
+    "password": "123456",
     "database": "cafeteria",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "port": 3306,
+    "dialect": "mysql",
+    "logging": false,
+    "timezone": "Z"
   },
   "test": {
-    "dialect": "sqlite",
-    "storage": ":memory:"
+    "username": "cafeteria",
+    "password": "123456",
+    "database": "cafeteria_test",
+    "host": "127.0.0.1",
+    "port": 3306,
+    "dialect": "mysql",
+    "logging": false,
+    "timezone": "Z"
   },
   "production": {
-    "dialect": "sqlite",
-    "storage": "./cafeteria.production.db"
+    "use_env_variable": "DATABASE_URI",
+    "dialect": "mysql",
+    "logging": false,
+    "timezone": "Z"
   }
 }
