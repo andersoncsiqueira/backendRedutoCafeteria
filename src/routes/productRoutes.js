@@ -12,9 +12,13 @@ const reqLogger = (req, _res, next) => {
 router.get('/', productController.getAllProducts);
 router.get('/:id', productController.getProductById);
 
+// Rota específica para reordenação (deve vir ANTES das rotas genéricas)
+router.patch('/:id/reorder', productController.reorderProduct);
+
 // use o NOME DO CAMPO "file"
 router.post('/', reqLogger, upload.single('file'), productController.createProduct);
 router.put('/:id', reqLogger, upload.single('file'), productController.updateProduct);
+router.patch('/:id', reqLogger, upload.single('file'), productController.updateProduct);
 
 router.delete('/:id', productController.deleteProduct);
 
